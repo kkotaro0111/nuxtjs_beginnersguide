@@ -1,19 +1,22 @@
 <template lang="pug">
-  section.container
-    div
-      h3 Nuxt.js のタグが付けられた投稿の一覧
-      ul
-        li(v-for="item in items" :key="item.id")
-          h4
-            span {{item.title}}
-            small
-              span by
-              nuxt-link(:to="`/users/${item.user.id}`")
-                |{{item.user.id}}
-          div
-            |{{ item.body.slice(0, 130)}} ...
-          p
-            a(:href="item.url") {{ item.url}}
+  div
+    h1 Index page
+    //
+      section.container
+        div
+          h3 Nuxt.js のタグが付けられた投稿の一覧
+          ul
+            li(v-for="item in items" :key="item.id")
+              h4
+                span {{item.title}}
+                small
+                  span by
+                  nuxt-link(:to="`/users/${item.user.id}`")
+                    |{{item.user.id}}
+              div
+                |{{ item.body.slice(0, 130)}} ...
+              p
+                a(:href="item.url") {{ item.url}}
 
 </template>
 
